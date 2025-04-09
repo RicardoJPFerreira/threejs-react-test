@@ -2,8 +2,8 @@ import { useRef, useState, useEffect } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 import { useSpring, a } from "@react-spring/three";
 import * as THREE from "three";
-import Base from "./components/Base";
-import SmallHouse from "./components/SmallHouse";
+import Base from "./Buildings/Base";
+import SmallHouse from "./Buildings/SmallHouse";
 
 export function TileSelector({ onTileClick, setSelectedTile, buildingToPlace }) {
   const { camera, raycaster, mouse } = useThree();
@@ -77,7 +77,7 @@ export function TileSelector({ onTileClick, setSelectedTile, buildingToPlace }) 
       </mesh>
 
       {/* Animated Hover Square */}
-      <a.mesh
+      {/* <a.mesh
         ref={hoverRef}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={spring.scale}
@@ -88,7 +88,7 @@ export function TileSelector({ onTileClick, setSelectedTile, buildingToPlace }) 
           transparent
           opacity={spring.opacity}
         />
-      </a.mesh>
+      </a.mesh> */}
 
       {/* Ghost Preview Building */}
       {buildingToPlace && hoveredTile && (
